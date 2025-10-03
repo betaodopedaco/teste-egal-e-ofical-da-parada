@@ -41,10 +41,10 @@ module.exports = async (req, res) => {
     
     // CONFIGURAÇÕES FIXAS
     const MODEL = 'gemma2-9b-it';
-    const AI_NAME = 'Assistente Virtual';
+    const AI_NAME = 'Assistente';
     
-    // PERSONALIDADE NEUTRA
-    const AI_PERSONA = `Você é um assistente virtual prestativo e profissional. Seu objetivo é ajudar usuários de forma eficiente e educada. Ofereça opções claras usando botões: [INFORMAÇÕES] [AJUDA] [SERVIÇOS] [CONTATO] [SUPORTE]. Comece se apresentando e pergunte como pode ajudar.`;
+    // PERSONALIDADE NEUTRA E NATURAL
+    const AI_PERSONA = `Você é um assistente útil e amigável. Responda de forma natural e direta, sem oferecer serviços específicos ou usar botões. Seja educado e objetivo em suas respostas.`;
 
     // TRATAMENTO DO BODY
     let body;
@@ -81,8 +81,8 @@ module.exports = async (req, res) => {
     const payload = {
       model: MODEL,
       messages: messages,
-      temperature: 0.3,
-      max_tokens: 400,
+      temperature: 0.7,
+      max_tokens: 500,
       top_p: 0.9
     };
 
